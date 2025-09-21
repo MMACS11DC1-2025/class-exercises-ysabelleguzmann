@@ -3,15 +3,15 @@
 
 ## To get the latest updates:
 
-1. **Fetch From All Remotes**
+1. **Fetch From All Remotes**: Source Control -> More Actions... -> Pull, Push -> Fetch From All Remotes
 
 ![Step 1](assets/git-1.png "Source Control -> More Actions... -> Pull, Push -> Fetch From All Remotes")
 
-2. **Merge**
+2. **Merge**: Source Control -> More Actions... -> Branch -> Merge
 
 ![Step 2](assets/git-2.png "Source Control -> More Actions... -> Branch -> Merge")
 
-3. **Select branch**
+3. **Select branch** upstream/HEAD
 
-![Step 3](assets/git-2.png "upstream/HEAD")
+![Step 3](assets/git-3.png "upstream/HEAD")
 
