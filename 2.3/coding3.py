@@ -25,3 +25,28 @@ Would you like fries for $3? (Yes/No)
 > yes
 Your total is $3.42
 """
+
+price = 0
+
+question_1 = "would you like a burger for $5 (yes or NO)"
+question_2 = "would you like fries for $3 (Yes or NO)"
+
+print("Welcome to mcdonalds")
+print(question_1)
+input().lower()
+
+print(question_2)
+input().lower()
+
+if question_1 = "yes":
+    score = score + 5
+
+elif question_2 = 'no'
+    score = score + 3
+
+else 
+    print("Please order.")
+
+    
+
+
