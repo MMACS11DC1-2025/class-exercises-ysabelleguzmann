@@ -14,3 +14,15 @@ Judge 4: 8.5
 Judge 5: 9
 Your Olympic score is 8.0
 """
+
+judges = ["what do you rate the performance out of 10? ", "with this performance, what is the rating out of 10? ", "what do you think out of 10? ", "how was the overall performance out of 10? ", "please rate out of 10. "]
+
+score = 0
+
+for j in judges:
+    rating = float(input(j))
+    score += rating
+
+rangeofq = len(judges)
+    
+print("the total score is " + str(score/rangeofq) )
