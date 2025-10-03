@@ -17,6 +17,25 @@ Test as you go! Describe in your comments what steps you took to test your code.
 #Sep 29 2025
 
 #FILE OPENER
-file = open("responses.csv")
-file.readline()
+file = open("2.4/responses.csv")
+question = input('who are you')
+question2 = input("who do you think you have in common with")
+
+
+#READS THE LINES (RESULTS OF SURVEY)
+list = file.read.strip(',')
+line = list[8].split(',')
+print(line[3])
+print()
+
+#LOOPS FOR EACH LINE IN FILE
+for line in file:
+    if question in line:
+        print(line)
+
+    if question2 in line:
+        print(line)
+
+
+
 
