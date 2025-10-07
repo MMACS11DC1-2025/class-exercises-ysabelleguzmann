@@ -17,20 +17,55 @@ Test as you go! Describe in your comments what steps you took to test your code.
 #Sep 29 2025
 
 #FILE OPENER
+first = ""
+second = ""
+
 file = open("2.4/responses.csv")
-question = input('who are you')
-question2 = input("who do you think you have in common with")
+
+linesofall = file.readlines()
+
+#Now that the file is opened, the user will input their full name
+print("HI! I am Botty! Before we begin, can you please state your full name? Thank you :) ")
+first_answer = input().strip().lower()
+
+for line_1 in linesofall:
+    if first_answer in line_1.lower():
+        print("These are your results when we did the survey")
+        print(line_1)
+        first = line_1
+
+#For here, do the same thing as you did with the first person
+print("is there someone you think you will relate with in your Comp-Sci 11 class?")
+second_answer = input().strip().lower()
+
+for line_2 in linesofall:
+    if second_answer in line_2.lower():
+        print("These are your results when we did the survey")
+        print(line_2)
+        second = line_2
+
+#have the results of the person be split up so that its easier to read in a list
+first = first.split(",")
+second = second.split(",")
+
+#this code shows the common things between the people
+outcome = [item for item in first[2:] if item in second[2:]]
+
+#this just knows how many are in the list
+total = len(outcome)
+
+#calucations, so it shows a percent at the end for determination
+if len(first) == 0:
+    score = 0
+else:
+    score = total/len(first)*100
+
+    print("You are " +str(score) + " percent alike amongst each other!")
 
 
-#READS THE LINES (RESULTS OF SURVEY)
-list = file.read.strip(',')
-line = list[8].split(',')
-print(line)
+                        
+        
 
-#LOOPS FOR EACH LINE IN FILE
-for line in file:
-    if question in line
-        question
         
 
 
