@@ -62,6 +62,14 @@ else:
 
     print("You are " +str(score) + " percent alike amongst each other!")
 
+if percent >= 80:
+    print("THATS AMAZING!!! I HOPE YOU GUYS ARE FRIENDS :)")
+elif percent >= 40:
+    print("Hm not too bad honestly")
+elif percent >= 10:
+    print("so maybe not???")
+else:
+    print("Yeah so maybe we should stay away from each other...")
 
                         
         
