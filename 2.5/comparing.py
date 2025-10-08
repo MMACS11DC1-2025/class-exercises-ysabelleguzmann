@@ -9,10 +9,14 @@ Test as you go! Describe in your comments what steps you took to test your code.
 
 """""
 #we will be making a data analysis page
-#it will use the data that we submitted trhough the survey
+#it will use the data that we submitted through the survey
 #First user will ask for a name, then results will sho then bot will ask for another name to compare
 #results for the 2nd person will show then a percent determines for how alike person 1 and person 2 are
-
+#a comment is shown after calculations of percent 
+#if greater or equal to 70 - Good Job
+#if greater or equal to 40 - not bad
+#if greater than 10 - umm ok
+#if less than 10 - yeah no
 
         An Example:
         Hi! State a name in this class
@@ -23,6 +27,7 @@ Test as you go! Describe in your comments what steps you took to test your code.
         Bella (<--- User Input)
         23, Bella Gu, Rabbit, Science, Badminton, Volleyball, Hip-Hop, Horror, Bubble Waffle
         You are 10.0 percent alike amongst each other!
+        umm okay
 """
 #Data Botty
 #Ysabelle Guzman
@@ -55,6 +60,11 @@ for line_2 in linesofall:
         print(line_2)
         second = line_2
 
+#if name isnt found in the results, there will be an error to the code
+if first == "" or second == "":
+    print("Person not found. Try again")
+    exit()
+
 #have the results of the person be split up so that its easier to read in a list
 first = first.split(",")
 second = second.split(",")
@@ -73,14 +83,16 @@ else:
 
     print("You are " +str(score) + " percent alike amongst each other!")
 
-if percent >= 80:
-    print("THATS AMAZING!!! I HOPE YOU GUYS ARE FRIENDS :)")
-elif percent >= 40:
-    print("Hm not too bad honestly")
-elif percent >= 10:
-    print("so maybe not???")
+#comment will appear base on how compatible the results are
+if score >= 70:
+    print("That is amazing!")
+elif score >= 40:
+    print("Okay not too bad.")
+elif score > 10:
+    print("Umm okayy")
 else:
-    print("Yeah so maybe we should stay away from each other...")
+    print("yeah no")
+
 
                         
         
