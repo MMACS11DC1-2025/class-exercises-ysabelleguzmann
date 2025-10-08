@@ -7,23 +7,23 @@ You must design your algorithm in English first, then translate it to Python cod
 Test as you go! Describe in your comments what steps you took to test your code.
 """
 
-
+"""""
 #we will be making a data analysis page
 #it will use the data that we submitted trhough the survey
 #First user will ask for a name, then results will sho then bot will ask for another name to compare
 #results for the 2nd person will show then a percent determines for how alike person 1 and person 2 are
 
 
-#An Example:
-#Hi! State a name in this class
-#Ysabelle (<--- User Input)
-#These are your results
-#26, Alessandra Ysabelle Guzman, 8, Dog, English, Swimming, Basketball, Jazz, Rom-Com, Starbucks
-#State another name
-#Bella (<--- User Input)
-#23, Bella Gu, Rabbit, Science, Badminton, Volleyball, Hip-Hop, Horror, Bubble Waffle
-#You are 10.0 percent alike amongst each other!
-
+        An Example:
+        Hi! State a name in this class
+        Ysabelle (<--- User Input)
+        These are your results
+        26, Alessandra Ysabelle Guzman, 8, Dog, English, Swimming, Basketball, Jazz, Rom-Com, Starbucks
+        State another name
+        Bella (<--- User Input)
+        23, Bella Gu, Rabbit, Science, Badminton, Volleyball, Hip-Hop, Horror, Bubble Waffle
+        You are 10.0 percent alike amongst each other!
+"""
 #Data Botty
 #Ysabelle Guzman
 #Sep 29 2025
