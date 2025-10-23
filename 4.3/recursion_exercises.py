@@ -64,7 +64,6 @@ def count_vowels_recursive_helper(word, index):
         return 0
     return word[index] + count_vowels_recursive_helper(vowels, word + 1)
 
-if return 
 
 
 def count_vowels(word):
