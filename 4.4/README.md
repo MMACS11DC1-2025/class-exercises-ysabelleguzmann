@@ -9,4 +9,7 @@ and what colour(s) they want.
 
 
 **Successes + Fails**
-- 
+- trying to make a spiral but is stopping in one curve
+- my curve and tree was going OUT of the space
+- we used a goto 
+- when asked how many levels, it writes more than what was asked for
