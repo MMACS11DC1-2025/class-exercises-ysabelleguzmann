@@ -13,3 +13,7 @@ and what colour(s) they want.
 - my curve and tree was going OUT of the space
 - we used a goto 
 - when asked how many levels, it writes more than what was asked for
+- we finally put some colour into it making it look alive
+- i cant seem to make the graphic fill the entire screen so i have to figure that out
+- we also made a tree + a star(tweaked a little with the numbers)
+- 
