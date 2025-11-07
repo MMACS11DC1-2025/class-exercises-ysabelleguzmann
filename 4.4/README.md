@@ -17,3 +17,4 @@ and what colour(s) they want.
 - i cant seem to make the graphic fill the entire screen so i have to figure that out
 - we also made a tree + a star(tweaked a little with the numbers)
 - 
+
