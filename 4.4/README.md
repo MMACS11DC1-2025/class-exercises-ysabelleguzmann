@@ -1,5 +1,4 @@
 # Ysabelle Guzman 
-# Due
 # Turtle PROJECT
 
 **Explanation of program**
