@@ -1,6 +1,12 @@
 # counting jelly beans
 #import image processing libraries
+import time # a function where it Times how long porgam runs
+
+t0 = time.time() #Beginning time
+
 from PIL import Image
+
+t1 = time.time()
 
 #define a function colour(r,g,b) to return the colour of a pixel
 def colour(r, g, b):
@@ -33,6 +39,8 @@ orange_pixels = []
 width = file.width
 height = file.height
 
+t2 = time.time()
+
 for x in range(width):
     for y in range(height):
         pixel_r = jb_image[x,y][0]
@@ -42,7 +50,17 @@ for x in range(width):
         if colour(pixel_r, pixel_g, pixel_b) == "yellow":
             yellow_pixels.append(jb_image[x,y])
             file.putpixel((x, y), (255, 255, 255))
+        if colour(pixel_r, pixel_g, pixel_b) == "red":
+            red_pixels.append(jb_image[x,y])
+        if colour(pixel_r, pixel_g, pixel_b) == "green":
+            green_pixels.append(jb_image[x,y])
+        if colour(pixel_r, pixel_g, pixel_b) == "blue":
+            blue_pixels.append(jb_image[x,y])
+        if colour(pixel_r, pixel_g, pixel_b) == "orange":
+           orange_pixels.append(jb_image[x,y])
 
+
+t3 = time.time()
         
 
 #gets the length of yellow pixels
@@ -77,5 +95,16 @@ green_percent = green_ratio * 100
 blue_percent = blue_ratio * 100
 orange_percent = orange_ratio * 100
 
-report = "there are {:.2f}% yellow jelly beans, {:.2f}% red jelly beans, {:.2f}% green jelly beans, {:.2f}% green jelly beans".format(yellow_percent)
+report = "there are {:.2f}% yellow jelly beans, {:.2f}% red jelly beans, {:.2f}% green jelly beans," \
+          "{:.2f}% blue jelly beans, {:.2f}% orange jelly beans".format(yellow_percent, red_percent, green_percent, blue_percent, orange_percent)
 print(report)
+
+# calculate and output elapsed times
+module_load = t1- t0
+image_open_load = t2 - t1
+loop = t3 - t2
+entire = t3 - t0
+
+timings = "it took {:.2f}s to import PIL, {:.2f}s to load the image," \
+            " {:.2f}s to do the loop. All in all it took {:.2f}s".format(module_load, image_open_load, loop, entire)
+print(timings)
