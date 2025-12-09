@@ -12,6 +12,7 @@ from PIL import Image
 
 t0 = time.time()
 
+#defines the colour that represents day (blue), and that represents night (black)
 def colour(r, g, b):
     # r <= 235 g <= 48 b <= 89
     if r <= 235 and g <= 48 and b <= 89:
@@ -20,12 +21,15 @@ def colour(r, g, b):
     elif r <= 230 and g <= 50 and b <= 10:
         return "night"
     
+#list of day/night images 
 world = ["6.7/day1.jpg", "6.7/day2.jpg", "6.7/day3.jpg", "6.7/day4.jpg", "6.7/day5.jpg", "6.7/night1.jpg", "6.7/night2.jpg", "6.7/night3.jpg", "6.7/night4.jpg", "6.7/night5.jpg"]
 
+#loops through each image
 for image in world:
     file = Image.open(world)
     dn_image = file.load()
 
+#identifies what its pixels for day or night
 for i in range(len(world)):
     width = file.width
     height = file.height
@@ -47,4 +51,10 @@ for i in range(len(world)):
 num_day = len(day_pixels)
 num_night = len(night_pixels)
 
-total_day = num_day * 100
+total_pixels = width*height
+
+# count how many images there are that assign with the options : day or night, should result with 5 days, 5 nights
+
+
+# UNIT 6: SORTING SECTION
+# in this section, it will sort from the brightest to darkest image.
