@@ -7,3 +7,8 @@ or day time (bright colours like light blue or white). The program should say th
 its requirements.
 
 
+***struggles + what to finish***
+- Mixed up the rgb values for day/night
+- Percentages need to be created with how bright it is or dark it is
+- must then use that information to create an assortment with brightest to darkest
+- create a binary search with targeting which one is to be the darkest of them all
