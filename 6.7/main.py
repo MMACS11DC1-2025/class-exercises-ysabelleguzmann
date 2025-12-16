@@ -13,17 +13,21 @@ from PIL import Image
 
 #defines the colour that represents day, and that represents night
 def colour(r, g, b):
-    # day pixels : blueish
-    if 10 <= r <= 125 and 70 <= g <= 178 and 140 <= b <= 255:
-        return "day"
+    #dark blue
+    if 0 <= r <= 60 and 60 <= g <= 120 and 110 <= b <= 255:
+        return "dark blue"
+    #blue
+    elif 50 <= r <= 90 and 150 <= g <= 190 and 230 <= b <= 255:
+        return "blue"
     # night pixels : dark
-    elif r <= 18 and g <= 16 and b <= 20:
+    elif 5 <= r <= 10 and 8 <= g <= 16 and 19 <= b <= 24:
         return "night"
     else:
         return None
     
 #list of day/night images 
 world = ["6.7/day1.jpg", "6.7/day2.jpg", "6.7/day3.jpg", "6.7/day4.jpg", "6.7/day5.jpg", "6.7/night1.jpg", "6.7/night2.jpg", "6.7/night3.jpg", "6.7/night4.jpg", "6.7/night5.jpg"]
+percentage = []
 
 #totals for number of images
 day_images = 0
@@ -31,7 +35,6 @@ night_images = 0
 
 t0 = time.time()
 
-percentage = []
 #loops through each image
 for i in range(len(world)):
     pictures = world[i]
@@ -42,36 +45,37 @@ for i in range(len(world)):
     height = file.height
 
     # pixel counter
-    day_pixels = []
+    db_pixels = []
+    b_pixels = []
     night_pixels = []
 
 #checks if pixel matches day or night
     for x in range(width):
         for y in range(height):
-            pixels = dn_image[x, y]
-            pixel_r = pixels[0]
-            pixel_g = pixels[1]
-            pixel_b = pixels[2]
-            colour_type = colour(pixel_r, pixel_g, pixel_b)
+            pixel_r = dn_image[x,y][0]
+            pixel_g = dn_image[x,y][1]
+            pixel_b = dn_image[x,y][2]
 
-            if colour_type == 'day':
-                day_pixels.append((x,y))
-            elif colour_type == 'night':
-                night_pixels.append((x,y))
-
-    #decides whether it is DAY or NIGHT
-    if day_pixels > night_pixels:
-        day_images += 1
-        print("Classified as a DAY IMAGE")
-    else:
-        night_images += 1
-        print("Classified as a NIGHT IMAGE")
-
-num_day = len(day_pixels)
-num_night = len(night_pixels)
-total_pixels = width * height
+            if colour(pixel_r, pixel_g, pixel_b) == "dark blue":
+                db_pixels.append(dn_image[x,y])
+                file.putpixel((x, y), (255, 255, 255))
+            if colour(pixel_r, pixel_g, pixel_b) == "blue":
+                b_pixels.append(dn_image[x,y])
+            if colour(pixel_r, pixel_g, pixel_b) == "night":
+                night_pixels.append(dn_image[x,y])
 
 t1 = time.time()
+
+num_DB = len(db_pixels)
+num_b = len(b_pixels)
+num_night = len(night_pixels)
+
+total_pixels = width * height
+
+day_ratio = num_DB + num_b / total_pixels
+night_ratio = num_night / total_pixels
+
+
 total_time = t1 - t0
 
 timing = "it took {:.2f}s to run this".format(total_time)
@@ -123,9 +127,9 @@ search_target = 100.00
 found_target = search(percentage, search_target)
 
 if found_target:
-    print("\nFound bread with approximately {:.2f}% burn: {}".format(search_target, found_target))
+    print("\n: {}".format(search_target, found_target))
 else:
-    print("\nNo bread found with approximately {:.2f}% burn".format(search_target))
+    print("\n {:.2f}% ".format(search_target))
 
 
     
