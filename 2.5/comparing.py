@@ -1,0 +1,104 @@
+"""
+Create a program that uses counting and comparison operators (< > <= >=).
+You must use the class' datafile, 'responses.csv' and analyze it
+    to make at least 2 interesting observations.
+You must use user input to add interactivity to the program.
+You must design your algorithm in English first, then translate it to Python code.
+Test as you go! Describe in your comments what steps you took to test your code.
+"""
+
+"""""
+#we will be making a data analysis page
+#it will use the data that we submitted through the survey
+#First user will ask for a name, then results will sho then bot will ask for another name to compare
+#results for the 2nd person will show then a percent determines for how alike person 1 and person 2 are
+#a comment is shown after calculations of percent 
+#if greater or equal to 70 - Good Job
+#if greater or equal to 40 - not bad
+#if greater than 10 - umm ok
+#if less than 10 - yeah no
+
+        An Example:
+        Hi! State a name in this class
+        Ysabelle (<--- User Input)
+        These are your results
+        26, Alessandra Ysabelle Guzman, 8, Dog, English, Swimming, Basketball, Jazz, Rom-Com, Starbucks
+        State another name
+        Bella (<--- User Input)
+        23, Bella Gu, Rabbit, Science, Badminton, Volleyball, Hip-Hop, Horror, Bubble Waffle
+        You are 10.0 percent alike amongst each other!
+        umm okay
+"""
+#Data Botty
+#Ysabelle Guzman
+#Sep 29 2025
+
+#FILE OPENER
+first = ""
+second = ""
+
+file = open("2.4/responses.csv")
+linesofall = file.readlines()
+
+#Now that the file is opened, the user will input their full name
+print("HI! I am Botty! Before we begin, can you please state your full name? Thank you :) ")
+first_answer = input().strip().lower()
+
+for line_1 in linesofall:
+    if first_answer in line_1.lower():
+        print("These are your results when we did the survey")
+        print(line_1)
+        first = line_1
+
+#For here, do the same thing as you did with the first person
+print("is there someone you think you will relate with in your Comp-Sci 11 class?")
+second_answer = input().strip().lower()
+
+for line_2 in linesofall:
+    if second_answer in line_2.lower():
+        print("These are your results when we did the survey")
+        print(line_2)
+        second = line_2
+
+#if name isnt found in the results, there will be an error to the code
+if first == "" or second == "":
+    print("Person not found. Try again")
+    exit()
+
+#have the results of the person be split up so that its easier to read in a list
+first = first.split(",")
+second = second.split(",")
+
+#this code shows the common things between the people
+outcome = [item for item in first[2:] if item in second[2:]]
+
+#this just knows how many are in the list
+total = len(outcome)
+
+#calucations, so it shows a percent at the end for determination
+if len(first) == 0:
+    score = 0
+else:
+    score = total/len(first)*100
+
+    print("You are " +str(score) + " percent alike amongst each other!")
+
+#comment will appear base on how compatible the results are
+if score >= 70:
+    print("That is amazing!")
+elif score >= 40:
+    print("Okay not too bad.")
+elif score > 10:
+    print("Umm okayy")
+else:
+    print("yeah no")
+
+
+                        
+        
+
+        
+
+
+
+
